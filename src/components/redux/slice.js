@@ -21,14 +21,14 @@ const carsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllCars.pending, handlePending)
-      .addCase(fetchAllCars.fulefield, (state, action) => {
+      .addCase(fetchAllCars.fulfilled, (state, action) => {
         state.isLoading = false;
         state.cars = action.payload;
         state.isError = false;
       })
       .addCase(fetchAllCars.rejected, handleRejected)
       .addCase(fetchCarDetails.pending, handlePending)
-      .addCase(fetchCarDetails.fulefield, (state, action) => {
+      .addCase(fetchCarDetails.fulfilled, (state, action) => {
         state.isLoading = false;
         state.carDetails = action.payload;
         state.isError = false;
