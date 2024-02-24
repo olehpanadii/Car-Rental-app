@@ -37,13 +37,14 @@ list-style:none;
 padding: 0 ;
 
 }
-p{;
+p{
 margin:0;
-padding:0;}
+padding:0;
+}
 h1,h2,h3{
-
 margin:0;
-padding:0;}
+padding:0;
+}
 a{
 text-decoration:none;
 color: black;}
