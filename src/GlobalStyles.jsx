@@ -1,6 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
+import "./fonts.css";
+
 export const GlobalStyle = createGlobalStyle`
+
 html {
   box-sizing: border-box;
   width: 100vw;
@@ -15,8 +18,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: Manrope, sans-serif;
   color: #212121;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
@@ -48,4 +50,8 @@ padding:0;
 a{
 text-decoration:none;
 color: black;}
+button{
+cursor: pointer;
+font-family: inherit;}
+
 `;

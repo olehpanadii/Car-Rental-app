@@ -1,22 +1,13 @@
-import { CarsList } from "components/CarsList/CarsList";
-import FilterMenu from "components/FilterMenu/FilterMenu";
-import { fetchAllCars } from "redux/operations";
-import { selectCars } from "redux/selectors";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Welkome } from "components/Welkome/Welkome";
+import { Helmet } from "react-helmet";
 
 export default function HomePage() {
-  const dispatch = useDispatch();
-  const cars = useSelector(selectCars);
-
-  useEffect(() => {
-    dispatch(fetchAllCars());
-  });
-
   return (
-    <div>
-      <FilterMenu />
-      <CarsList cars={cars} />
-    </div>
+    <>
+      <Helmet>
+        <title>Home page</title>
+      </Helmet>
+      <Welkome />
+    </>
   );
 }

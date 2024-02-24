@@ -1,12 +1,21 @@
+import {
+  ItemContainer,
+  StyledBtn,
+  StyledImage,
+  StyledList,
+  StyledListItem,
+  StyledName,
+  StyledNameContainer,
+  StyledSpan,
+} from "./CardListItem.styled";
+
 export const CarListItem = ({
   car: {
-    id,
-    year,
     make,
     model,
     type,
     img,
-
+    year,
     accessories,
 
     rentalPrice,
@@ -20,29 +29,26 @@ export const CarListItem = ({
   const country = address ? address.split(",")[2].trim() : "";
 
   return (
-    <div>
-      <img src={img} alt="car" />
-      <div>
-        <h3>
-          {make} {model}
-        </h3>
-        <p>{rentalPrice}</p>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <p>{city}</p>
-          </li>
-          <li>
-            <p>{country}</p>
-          </li>
-          <li>{rentalCompany}</li>
-          <li>{type}</li>
-          <li>{model}</li>
-          <li>{mileage}</li>
-          <li>{accessories[0]}</li>
-        </ul>
-      </div>
-    </div>
+    <ItemContainer>
+      <StyledImage src={img} alt={make} />
+      <StyledNameContainer>
+        <StyledName>
+          {make} <StyledSpan>{model}</StyledSpan>, {year}
+        </StyledName>
+        <StyledName>{rentalPrice}</StyledName>
+      </StyledNameContainer>
+
+      <StyledList>
+        <StyledListItem>{city}</StyledListItem>
+        <StyledListItem>{country}</StyledListItem>
+        <StyledListItem>{rentalCompany}</StyledListItem>
+        <StyledListItem>{type}</StyledListItem>
+        <StyledListItem>{model}</StyledListItem>
+        <StyledListItem>{mileage}</StyledListItem>
+        <StyledListItem>{accessories[0]}</StyledListItem>
+      </StyledList>
+
+      <StyledBtn type="button">Learn more</StyledBtn>
+    </ItemContainer>
   );
 };

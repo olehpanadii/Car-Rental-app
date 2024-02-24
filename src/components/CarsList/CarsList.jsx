@@ -1,15 +1,16 @@
 import { CarListItem } from "components/CarListItem/CarListItem";
+import { StyledContainer, StyledList } from "./CarsList.styled";
 
 export const CarsList = ({ cars }) => {
   return (
-    <div>
-      <ul>
+    <StyledContainer>
+      <StyledList>
         {cars.map((car) => (
           <li key={car.id}>
             <CarListItem car={car} />
           </li>
         ))}
-      </ul>
-    </div>
+      </StyledList>
+    </StyledContainer>
   );
 };
