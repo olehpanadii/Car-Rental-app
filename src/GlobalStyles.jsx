@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
-import "modern-normalize";
-import "./fonts.css";
+import { createGlobalStyle } from 'styled-components';
+import 'modern-normalize';
+import './fonts.css';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -24,6 +24,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 img {
   display: block;

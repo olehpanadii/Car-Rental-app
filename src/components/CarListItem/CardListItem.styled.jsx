@@ -1,4 +1,31 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { IoMdHeartEmpty } from 'react-icons/io';
+import { IoMdHeart } from 'react-icons/io';
+
+export const StyledHeart = styled(IoMdHeartEmpty)`
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.5px;
+
+  fill: rgba(240, 228, 228, 0.8);
+`;
+export const StyledFillHeart = styled(IoMdHeart)`
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.5px;
+  stroke: #3470ff;
+  fill: #3470ff;
+`;
+export const StyledIconBtn = styled.button`
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+`;
+export const ImgContainer = styled.div`
+  position: relative;
+`;
 
 export const ItemContainer = styled.div`
   width: 274px;
@@ -31,7 +58,7 @@ export const StyledListItem = styled.li`
   position: relative;
 
   &::after {
-    content: " ";
+    content: ' ';
     position: static;
     width: 16px;
     height: 0;
