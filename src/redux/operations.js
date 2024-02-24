@@ -12,7 +12,7 @@ export const fetchAllCars = createAsyncThunk(
       const resp = await axios.get("/cars");
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectedWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -23,7 +23,7 @@ export const fetchCarDetails = createAsyncThunk(
       const resp = await axios.get("/cars/id");
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectedWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );

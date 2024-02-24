@@ -1,7 +1,7 @@
 import { CarsList } from "components/CarsList/CarsList";
 import FilterMenu from "components/FilterMenu/FilterMenu";
-import { fetchAllCars } from "components/redux/operations";
-import { selectCars } from "components/redux/selectors";
+import { fetchAllCars } from "redux/operations";
+import { selectCars } from "redux/selectors";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
