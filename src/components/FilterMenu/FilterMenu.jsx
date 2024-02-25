@@ -77,7 +77,7 @@ const FilterMenu = ({ onFilterChange }) => {
           onChange={handleHourlyRateChange}
         >
           <option value="">To $</option>
-          {generateOptions(0, 200, 10).map(value => (
+          {generateOptions(30, 200, 10).map(value => (
             <option key={value} value={value}>
               ${value}
             </option>
