@@ -1,9 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledMainBtn = styled.button`
   margin-top: 100px;
-  margin-left: 50%;
-  transform: translateX(-50%);
+
   border: none;
   background: transparent;
 

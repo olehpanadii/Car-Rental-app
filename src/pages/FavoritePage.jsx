@@ -5,6 +5,7 @@ import { CarsList } from 'components/CarsList/CarsList';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { useSelector } from 'react-redux';
 import { selectFavorites } from '../redux/selectors';
+import { EmptyFavorites } from 'components/EmptyFavorites/EmptyFavorites';
 
 export default function FavoritePage() {
   const favorites = useSelector(selectFavorites);
@@ -18,7 +19,11 @@ export default function FavoritePage() {
       </Helmet>
       <StyledContainer>
         <FilterMenu />
-        <CarsList cars={favorites} />
+        {favorites.length === 0 ? (
+          <EmptyFavorites />
+        ) : (
+          <CarsList cars={favorites} />
+        )}
         {shouldRenderLoadMoreBtn && <LoadMoreBtn />}
       </StyledContainer>
     </>

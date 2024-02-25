@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledList = styled.ul`
   display: flex;
@@ -9,6 +9,7 @@ export const StyledList = styled.ul`
   justify-content: center;
 `;
 export const StyledContainer = styled.div`
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
