@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import {
   ImgContainer,
@@ -12,11 +12,20 @@ import {
   StyledName,
   StyledNameContainer,
   StyledSpan,
+  StyledFillHeart,
 } from './CardListItem.styled';
 import { ModalDetails } from 'components/Modal/Modal';
+import { useDispatch, useSelector } from 'react-redux';
+
+import {
+  addToFavorites,
+  deleteFromFavorites,
+} from '../../redux/favoritesSlice';
+import { selectFavorites } from '../../redux/selectors';
 
 export const CarListItem = ({ car }) => {
   const {
+    id,
     make,
     model,
     type,
@@ -38,13 +47,31 @@ export const CarListItem = ({ car }) => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const favoritesCars = useSelector(selectFavorites);
+
+  const dispatch = useDispatch();
+  const [isItInFavorites, setIsItInFavorites] = useState(false);
+
+  useEffect(() => {
+    setIsItInFavorites(favoritesCars.some(favorite => favorite.id === id));
+  }, [id, favoritesCars]);
 
   return (
     <ItemContainer>
       <ImgContainer>
         <StyledImage src={img} alt={make} />
-        <StyledIconBtn type="button">
-          <StyledHeart />
+        <StyledIconBtn
+          type="button"
+          onClick={() => {
+            if (isItInFavorites) {
+              dispatch(deleteFromFavorites(id));
+            } else {
+              dispatch(addToFavorites(car));
+              setIsItInFavorites(true);
+            }
+          }}
+        >
+          {isItInFavorites ? <StyledFillHeart /> : <StyledHeart />}
         </StyledIconBtn>
       </ImgContainer>
       <StyledNameContainer>
