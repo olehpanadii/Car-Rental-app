@@ -37,6 +37,7 @@ export const CarListItem = ({ car }) => {
     address,
     mileage,
   } = car;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const city = address ? address.split(',')[1].trim() : '';
   const country = address ? address.split(',')[2].trim() : '';
